@@ -1,0 +1,16 @@
+aside#izquierda{
+	margin-top:15px;
+	border:solid 1px white;
+	box-shadow:0px 0px 15px white;
+	border-radius:10px 10px 10px 10px;
+	transition:border 1s,box-shadow 1s, background 1s;
+	-webkit-transition:border 1s,box-shadow 1s, background 1s;
+	-moz-transition:border 1s,box-shadow 1s, background 1s;
+	-o-transition:border 1s,box-shadow 1s, background 1s;
+	-ms-transition:border 1s,box-shadow 1s, background 1s;
+}
+aside#izquierda:hover{
+	border:solid 1px cyan;
+	box-shadow:0px 0px 15px cyan;
+	background:white;
+}

@@ -1,0 +1,38 @@
+div#todo{
+     margin:0 auto;
+	 width:959px;
+}
+header{
+     height:150px;
+	 border:solid 1px black;
+	 width:957px;
+	 overflow:hidden;
+}
+aside#izquierda{
+    float:left;
+	border:solid 1px black;
+}
+section{
+    float:left;
+	border:solid 1px black;
+	width:590px;
+	margin-left:1px;
+}
+aside#derecha{
+    float:right;
+	border:solid 1px black;
+}
+footer{
+    float:center;
+    width: 1000%;
+    border:solid 0px black;
+
+}
+section article{
+	width:550px;
+	margin-left:10px;
+}
+body{	
+	background:url(../img/degradado.png),rgba(0,0,0,0.2);
+	background-repeat:repeat-x;
+}
