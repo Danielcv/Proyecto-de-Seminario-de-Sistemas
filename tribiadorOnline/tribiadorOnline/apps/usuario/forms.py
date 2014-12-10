@@ -31,3 +31,7 @@ class fusuario(UserCreationForm):
 		if commit:
 			user.save()
 		return user
+
+# class form_modificacion_usuario(ModelForm):
+#     class Meta:
+#         model = Usuarios

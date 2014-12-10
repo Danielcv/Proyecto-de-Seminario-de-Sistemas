@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "usuario/base_user.html" %}
 
 {% block title %}
 	    <title>Perfil</title>
@@ -10,7 +10,11 @@
 			<div class="col-xs-12">
 				<h2>Bienbenido:{{user.get_full_name}}</h2><br>
 				<h2>Pais:{{ user.perfil.pais }}</h2>
-				<img src="/media/{{user.perfil.avatar.url_200x200}}" alt="avatar">			
+				<img src="/media/{{user.perfil.avatar.url_200x200}}" alt="avatar">
+				<br>
+            	<a href="/editar/datos/" class="btn btn-default btn-xs">Modificar datos</a>
+            	|
+            	<a href="/modificar/perfil/{{id}}/" class="btn btn-default btn-xs">Editar Cuenta</a>	
 			</div>
 		</div>
 	</div>

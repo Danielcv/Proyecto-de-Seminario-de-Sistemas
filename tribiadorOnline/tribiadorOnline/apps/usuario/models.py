@@ -6,3 +6,5 @@ class Perfil(models.Model):
 	user=models.OneToOneField(User,unique=True)
 	pais=models.CharField(max_length="30", null=False)
 	avatar=ImageWithThumbsField(upload_to="img_user",sizes=((50,50),(200,200)))
+	def __str__(self):
+	 	return "->%s "%(self.user)	

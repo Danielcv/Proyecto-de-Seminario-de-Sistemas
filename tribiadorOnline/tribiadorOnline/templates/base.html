@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -47,23 +47,41 @@
 				</div>
 				<div style="clear:both;"></div>
 				<nav>
-					<ul>
+					<ul id="menu">
+					    <!-- {% for item in menu %}
+					       <li><a href="{{item.url}}">{{item.label}}</a></li>
+					     {% endfor %} -->
+
 						<li class="active">
 							<a href="/">Inicio</a>
 						</li>
 						<li>
 							<a href="/user/registro/">Registro</a>
 						</li>
-						{% if user.is_authenticated %}
-							<li><a href="/logout/">Salir</a></li>
+
+						<!-- {% if user.is_authenticated or user.is_superuser %}
+							<li><a href="/logout/">{{user}} LogOut</a></li>
 						{% else %}
 							<li>
 								<a href="/login/">Login</a>
 							</li>
+						{% endif %} -->
+
+						
+						<li><a href="/login/">Login</a></li>
+						
+						<!-- {% if not user.is_anonymous %}
+						<li><a href="/logout/">{{user}} LogOut</a></li>
 						{% endif %}
-						<li>
-							<a href="#">Chat</a>
+ -->
+						<!-- <li>
+							<a href="http://localhost:3000/">Crear la partida</a>
 						</li>
+
+						<li>
+							<a href="/registro/tema/">Registro temas</a>
+						</li>
+ -->
 					</ul>
 				</nav>
 				<div style="clear:both"></div>
@@ -71,7 +89,7 @@
 			<section>
 				<div id="contieneformulario">
 
-					<h3>CONTENIDO</h3>
+					<h3><a href="www.facebook.com" class="btn btn-info btn-xs">Facebook</a></h3>
 					
 					{% block content %}
 				     
@@ -81,7 +99,7 @@
 			</section>
 			<div style="clear:both"></div>
 			<footer>
-				<h6>(c) M Daniel Colque Vargas</h6>
+				<h6><marquesine>(c) M Daniel Colque Vargas</marquesine></h6>
 			</footer>
 		</div>
 		<!--<script src="{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>

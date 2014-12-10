@@ -1,0 +1,25 @@
+# def actualiza_usuario(request, id):
+#     usuarios = Usuarios.objects.get(pk=id)
+#     usuario = request.user
+#     if request.method == 'POST':
+#         formulario = form_usuario(request.POST, instance = usuarios)
+#         if formulario.is_valid():
+#            form = formulario.save(commit=False)
+#            form.user = request.user  # Aquí van los campos que vas a modificar,
+#                                      # Se esta modificando el nombre del usuario
+#            form.save()
+#            return HttpResponseRedirect('/actualizar_cuenta')
+#     else:
+#         formulario = form_usuario(instance = usuarios)
+#     return render_to_response("usuario/actualizar_cuenta.html",{"formulario":formulario},RequestContext(request))
+#
+
+# def actualiza_usuario(request):
+#         if request.method == 'POST':
+#             formulario = form_usuario(request.POST)
+#             if formulario.is_valid():
+#                 formulario.save()
+#                 return HttpResponseRedirect('/actualizar_cuenta')
+#         else:
+#             formulario = form_usuario()
+#         return render_to_response('usuario/actualizar_cuenta.html', {'formulario':formulario}, context_instance=RequestContext(request))
