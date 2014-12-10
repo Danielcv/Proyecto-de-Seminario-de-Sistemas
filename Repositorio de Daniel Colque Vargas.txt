@@ -1,0 +1,2 @@
+Nuevo repositorio para subir proyectos de seminario de sistemas(SSH)
+git@github.com:Danielcv/Proyecto-de-seminrio-de-sistemas.git

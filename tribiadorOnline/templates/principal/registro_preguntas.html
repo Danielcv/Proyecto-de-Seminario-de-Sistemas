@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+	    <title>Registro de Preguntas</title>
+{% endblock %}
+{% block content %}
+	<div class="container page">
+		<div class="row">
+			<div class="col-xs-8">
+				{% load bootstrap3 %}
+				<form action="" method="post">
+				{% if estado %}
+					<div class="alert alert-info" role="alert">Preguta Registrada Correctamente</div>
+				{% endif %}
+				<legend>{{ titulo }}</legend>
+					{% bootstrap_form formulario %}
+				<legend>{{ titulo2 }}</legend>
+					{% bootstrap_form formulario2 %}
+					{% csrf_token %}
+					{% buttons %}
+						<button type="submit" class="btn btn-default">Registrar</button>
+						<!-- <input type="submit" name="benviar" value="Regitrar"> -->
+					{% endbuttons %}
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

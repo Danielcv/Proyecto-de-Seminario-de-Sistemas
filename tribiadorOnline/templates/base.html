@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="{{STATIC_URL}}js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(inicio)
+			function inicio(){
+				$("select").change(cambiacss)
+			}
+			function cambiacss(){
+				var plantilla =$("select").attr("value");
+				$("plantilla").html('<link rel=Stylesheet href="{{STATIC_URL}}css/'+plantilla+'.css" type="text/css">')
+			}
+		</script>
+		<link rel=Stylesheet href="{{STATIC_URL}}css/base.css" type="text/css">
+		<plantilla>
+			<link rel=Stylesheet href="{{STATIC_URL}}css/movil.css" type="text/css" media="screen and (max-width:400px) and (min-width:1px)">
+			<link rel=Stylesheet href="{{STATIC_URL}}css/tablet.css" type="text/css" media="screen and (max-width:680px) and (min-width:401px)">
+			<link rel=Stylesheet href="{{STATIC_URL}}css/pc1.css" type="text/css" media="screen and (max-width:1200px) and (min-width:681px)">
+			<link rel=Stylesheet href="{{STATIC_URL}}css/pchd.css" type="text/css" media="screen and (max-width:3600px) and (min-width:1201px)">
+		</plantilla>
+
+		<link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="{{STATIC_URL}}css/style.css" rel="stylesheet">-->
+
+		{% block title %}
+	    {% endblock %}
+	</head>
+	
+	<body>
+		<select name="plantilla">
+			<option value="">Seleccionar un Diseño</option>
+			<option value="pc1">Diseño para PC</option>
+			<option value="pchd">Diseño para alta definición</option>
+			<option value="movil">Diseño para teléfono móvil</option>
+			<option value="tablet">Diseño para tablet digital</option>
+		</select>
+		<hr>
+		<div id="contenedor">
+			<header>
+				<div id="titulo">
+					<div id="logo">
+					</div>
+					<h1>TribiaOnline.com</h1>
+					<h2>Seminario de Sistemas</h2>
+				</div>
+				<div style="clear:both;"></div>
+				<nav>
+					<ul>
+						<li class="active">
+							<a href="/">Inicio</a>
+						</li>
+						<li>
+							<a href="/user/registro/">Registro</a>
+						</li>
+						{% if user.is_authenticated %}
+							<li><a href="/logout/">Salir</a></li>
+						{% else %}
+							<li>
+								<a href="/login/">Login</a>
+							</li>
+						{% endif %}
+						<li>
+							<a href="#">Partida del Chat</a>
+						</li>
+					</ul>
+				</nav>
+				<div style="clear:both"></div>
+			</header>
+			<section>
+				<div id="contieneformulario">
+
+					<h3>CONTENIDO</h3>
+					
+					{% block content %}
+				     
+				  {% endblock %}
+				    
+				</div>
+			</section>
+			<div style="clear:both"></div>
+			<footer>
+				<h6>(c) M Daniel Colque Vargas</h6>
+			</footer>
+		</div>
+		<!--<script src="{{STATIC_URL}}js/jquery-1.11.1.min.js"></script>
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>-->
+	</body>
+</html>
