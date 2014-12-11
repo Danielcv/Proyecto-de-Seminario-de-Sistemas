@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	select#room
+		option 1
+		option 2
+	input#name(type='text', name='name', value='Your Name')
+	button#connect Chat!
+	p#status.disconnected Not Connected!
+	div#main
+		div#left
+			div#mbox
+				ul#msgs
+			div#wbox
+				input#message(type='text', size='66', name='message')
+				button#send Send!
+		div#right
+			ul#users
+
+block scripts
+	script(src='/vendor/jquery.min.js')
+	script(src='/vendor/socket.io.js')
+	script(src='/js/main.js')

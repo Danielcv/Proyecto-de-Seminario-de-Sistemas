@@ -1,0 +1,110 @@
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name = 'viewport')
+    title #{title}
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/javascripts/jquery/jquery-2.1.0.min.js", type='text/javascript')
+    script(src="/javascripts/jquery/jquery-ui-1.10.3.min.js", type='text/javascript')
+    script(src="/socket.io/socket.io.js", type='text/javascript')
+    script(src="/javascripts/page.js", type='text/javascript')
+    // CSS
+    // Bootstrap
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.min.css', type='text/css')
+    // Estilo del tema
+    link(rel='stylesheet', href='/stylesheets/AdminLTE.css', type='text/css')
+    // Slick
+    link(rel='stylesheet', href='/stylesheets/slick/slick.css', type='text/css')
+
+    // JS
+    // Bootstrap
+    script(src="/javascripts/bootstrap/bootstrap.min.js", type='text/javascript')
+    // Slick
+    script(type = 'text/javascript', src = '//code.jquery.com/jquery-migrate-1.2.1.min.js')
+    script(type = 'text/javascript', src = '/javascripts/slick/slick.js')
+    // iCheck
+    script(src="/javascripts/plugins/iCheck/icheck.min.js", type='text/javascript')
+    // Init
+    script(src="/javascripts/init.js", type='text/javascript')
+    // Admin
+    script(src="/javascripts/AdminLTE/app.js", type='text/javascript')
+    script(src="/javascripts/AdminLTE/dashboard.js", type='text/javascript')
+    script(src="/javascripts/AdminLTE/demo.js", type='text/javascript')
+  body.skin-blue
+    header.header
+      a.logo(href='/') TriviadorOnline.bo
+      nav.navbar.navbar-static-top(role='navigation')
+        a.navbar-btn.sidebar-toggle(data-toggle='offcanvas', role='button', href='#')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        div.navbar-right
+          ul.nav.navbar-nav
+            // User Account: style can be found in dropdown.less
+            li.dropdown.user.user-menu
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.glyphicon.glyphicon-user
+                if(typeof(session_nick) !== 'undefined')
+                  span #{session_nick}
+                else
+                  span Invitado
+                i.caret
+              ul.dropdown-menu
+                li.user-header.bg-light-blue
+                  img.img-circle(src='img/avatar3.png')
+                  if(typeof(session_nick) !== 'undefined')
+                    p #{session_nick}
+                    small Miembro desde Nov. 2014
+                  else
+                    p Inicie Sesión
+                // MenÃº Footer
+                li.user-footer
+                  div.pull-left
+                    a.btn.btn-default.btn-flat(href='#') Perfil
+                  div.pull-right
+                    a.btn.btn-default.btn-flath(href='http://localhost:8000/') Salir
+    div.wrapper.row-offcanvas.row-offcanvas-left
+      aside.left-side.sidebar-offcanvas
+        section.sidebar
+          div.user-panel
+            div.pull-left.image
+              img.img-circle(src='img/avata3.png', alt='User Image')
+            div.pull-left.info
+              p Hola, 
+                if(typeof(session_first_name) !== 'undefined')
+                  span#NickLayout #{session_first_name}
+                else
+                  span#NickLayout invitado
+              a(href='#')
+                i.fa.fa-circle.text-success
+                | Online
+          ul.sidebar-menu
+            li.active
+              a(href='/')
+                i.fa.fa-th
+                span Inicio
+            li
+              a(href='#')
+                i.fa.fa-th
+                span Usuarios
+            li
+              a(href='#')
+                i.fa.fa-th
+                span Preguntas
+            li
+              a(href='#')
+                i.fa.fa-th
+                span Puntos
+            li
+              a(href='#')
+                i.fa.fa-th
+                span Respuestas
+              
+            li
+              a(href='#')
+                i.fa.fa-th
+                span Administrar
+      block content

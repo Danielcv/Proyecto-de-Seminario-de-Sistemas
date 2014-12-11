@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  aside.right-side
+    // Contenido principal
+    section.content
+      div.row
+        section.col-lg-7.connectedSortable#sec_info_game
+          div.box.box-success
+            div.box-header
+              h3.box-title
+                div#game_name #{game_name}
+            hr
+            div.box-body
+              h6.box-title Tipo de Partida: 
+                div#game_type #{game_type}
+            div.box-body
+              h6.box-title Número de Preguntas: 
+                div#game_numberquestions #{game_numberquestions}
+            div.box-body
+              h6.box-title Tiempo por Pregunta: 
+                div#game_timeanswer #{game_timeanswer}
+            hr
+            div.col-lg-7
+              button.btn.btn-lg.btn-primary#btn-start Iniciar Juego
+        // Fin section
+        section.col-lg-7.connectedSortable#sec_question_game
+          div.box.box-success
+            div.box-header
+              h3.box-title#question
+            hr
+            div.box-body
+              h5.box-title#answerA
+            div.box-body
+              v.box-title#answerB
+            div.box-body
+              h5.box-title#answerC
+            div.box-body
+              h5.box-title#answerD
+        // Fin section
+        section.col-md-5.connectedSortable
+          // Chat box
+          div.box.box-success
+            div.box-header
+              i.fa.fa-comments-o
+              h3.box-title#chat-title #{session_nick}
+              div.box-tools.pull-right(data-toggle='tooltip', title='Status')
+                div.btn-group(data-toggle='btn-toggle')
+            div.box-body.chat#chat-box
+              // Chat item
+              // div.item
+              //   img.online(src='img/avatar.png', alt='user image')
+              //   p.message
+              //     a.name(href='#')
+              //       small.text-muted.pull-right
+              //         i.fa.fa-clock-o
+              //         | 2:15
+              //       | Mike Doe
+              //     | I would like to meet you to discuss the latest news about the arrival of the new theme. They say it is going to be one the best themes on the market.
+              // -- Chat item
+            div.box-footer
+              div.input-group
+                input.form-control#sendmessage(placeholder = 'Escribe aquí...', name = 'Mensaje')
+                div.input-group-btn
+                  button.btn.btn-success Enviar
+                    i.fa.fa-plus
+          // Fin - Chat Box

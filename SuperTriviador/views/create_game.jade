@@ -1,0 +1,58 @@
+extends layout
+
+block content
+  aside.right-side
+    // Contenido principal
+    section.content
+      div.row
+        section.col-lg-7.connectedSortable
+          div.box.box-success
+            div.box-header
+              h3.box-title Crear Partida
+            div.box-body
+              form(role = 'form', method = 'post', action = '/create_game')
+                div.form-group
+                  label Título
+                  input.form-control(type = 'text', placeholder = 'Introduzca el título...', name = 'name')
+                div.form-group
+                  label Tipo de Partida
+                  div.radio
+                    label
+                      input#optionsRadios1(type = 'radio', name = 'type', value = 'Publica', checked)
+                      | Partida Pública
+                  div.radio
+                    label
+                      input#optionsRadios2(type = 'radio', name = 'type', value = 'Privada')
+                      | Partida Privada
+                div.form-group
+                  label Preguntas
+                  select.form-control(name = 'numberquestions')
+                    option 10
+                    option 15
+                    option 20
+                    option 25
+                    option 30
+                div.form-group
+                  label Tiempo de Respuesta
+                  select.form-control(name = 'timeanswer')
+                    option(value = '10') 10 segundos
+                    option(value = '15') 15 segundos
+                    option(value = '15') 20 segundos
+                    option(value = '15') 25 segundos
+                    option(value = '15') 30 segundos
+                    option(value = '15') 35 segundos
+                    option(value = '15') 40 segundos
+                    option(value = '15') 45 segundos
+                    option(value = '15') 50 segundos
+                    option(value = '15') 55 segundos
+                    option(value = '15') 60 segundos
+                div.form-group
+                  label Categorias
+                  each tema in temas
+                    div.checkbox
+                      label
+                        input(type='checkbox', name='temas', value='#{tema.id}')
+                        | #{tema.nombre}
+                div.form-group
+                  button.btn.btn-default.btn-lg(type = 'submit') Crear Partida
+                  button.btn.btn-default.btn-lg Cancelar

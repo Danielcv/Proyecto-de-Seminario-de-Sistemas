@@ -1,0 +1,32 @@
+<html><head>
+    <title>Chat Service</title>
+    <link href="public/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  <h1>MultiRoom Chat Service with NodeJS &amp; Socket.io</h1>
+  <p>Welcome to MultiRoom Chat Service with NodeJS &amp; Socket.io</p>
+  <select id="room">
+    <option>1</option>
+    <option>2</option>
+  </select>
+  <input type="text" value="Your Name" name="name" id="name">
+  <button id="connect">Chat!</button>
+  <p class="disconnected" id="status">Not Connected!</p>
+  <div id="main">
+    <div id="left">
+      <div id="mbox">
+        <ul id="msgs"></ul>
+      </div>
+      <div id="wbox">
+        <input type="text" name="message" size="66" id="message">
+        <button id="send">Send!</button>
+      </div>
+    </div>
+    <div id="right">
+      <ul id="users"></ul>
+    </div>
+  </div>
+  <script src="public/vendor/jquery.min.js"></script>
+  <script src="public/vendor/socket.io.js"></script>
+  <script src="public/js/main.js"></script>
+</body></html>

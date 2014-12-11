@@ -1,0 +1,79 @@
+extends layout
+
+block content
+  aside.right-side
+    // Contenido principal
+    section.content
+      div.row#id-partidas-list
+        // Vista partidas iniciadas
+        div.partidas-list
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-aqua
+                div.inner
+                  h3 3
+                    sup(style='font-size: 20px') usuarios
+                  p Una super Trivia
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-green
+                div.inner
+                  h3 53
+                    sup(style='font-size: 20px') usuarios
+                  p Amigos
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-yellow
+                div.inner
+                  h3 44
+                    sup(style='font-size: 20px') usuarios
+                  p Entren todos
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-red
+                div.inner
+                  h3 65
+                    sup(style='font-size: 20px') usuarios
+                  p Solo novatos
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-aqua
+                div.inner
+                  h3 150
+                    sup(style='font-size: 20px') usuarios
+                  p Solo Expertos
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-green
+                div.inner
+                  h3 53
+                    sup(style='font-size: 20px') usuarios
+                  p No kiters
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-yellow
+                div.inner
+                  h3 44
+                    sup(style='font-size: 20px') usuarios
+                  p Amistoso
+                a.small-box-footer(href='#') Entrar
+          div.partidas-element
+            div.col-lg-3.col-xs-6
+              div.small-box.bg-red
+                div.inner
+                  h3 65
+                    sup(style='font-size: 20px') usuarios
+                  p De todo
+                a.small-box-footer(href='#') Entrar
+    // Fin section
+    section.content
+      row.well.col-lg-7.span6
+        a(href='/create_game')
+          button.btn.btn-lg.btn-default Crear Partida
+      
